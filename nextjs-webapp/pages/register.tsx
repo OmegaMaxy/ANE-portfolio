@@ -8,13 +8,14 @@ import { Flex, Box, FormControl, FormLabel, Heading, Input, Text, Button } from 
 const Register: NextPageWithLayout = () => {
 
     const [email, setEmail] = useState('')
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [fullName, setFullName] = useState('')
     const [password, setPassword] = useState('')
 
     async function handleRegister() {
         //const res = await login({email, password})
-        console.log(email, password, firstName, lastName)
+        console.log(email, password, fullName)
+
+        // redirect to portfolio edit page
     }
 
     return (
@@ -31,12 +32,8 @@ const Register: NextPageWithLayout = () => {
                         <Input value={email} onChange={(ev) => setEmail(ev.target.value)} name="email" type="email" placeholder='john.doe@acme.com' required />
                     </FormControl>
                     <FormControl mt="5">
-                        <FormLabel>First name</FormLabel>
-                        <Input value={firstName} onChange={(ev) => setFirstName(ev.target.value)} name="firstname" type="text" placeholder='John' required />
-                    </FormControl>
-                    <FormControl mt="5">
-                        <FormLabel>Last name</FormLabel>
-                        <Input value={lastName} onChange={(ev) => setLastName(ev.target.value)} name="lastname" type="text" placeholder='Doe' />
+                        <FormLabel>Full name</FormLabel>
+                        <Input value={fullName} onChange={(ev) => setFullName(ev.target.value)} name="fullname" type="text" placeholder='John Doe' required />
                     </FormControl>
                     <FormControl mt="5">
                         <FormLabel>Password</FormLabel>
