@@ -10,8 +10,8 @@ export default function Navbar() {
             </Flex>
             <Flex>
                 <ButtonGroup gap="4">
-                    <ButtonLink href="/login" size="lg" colorScheme='blue' variant='solid'>Login</ButtonLink>
-                    <ButtonLink href="/register" size="lg" colorScheme='blue' variant='outline'>Sign up</ButtonLink>
+                    <ButtonLink href="/login" size="lg" colorScheme="teal" variant='solid'>Login</ButtonLink>
+                    <ButtonLink href="/register" size="lg" colorScheme="teal" variant='outline'>Sign up</ButtonLink>
                 </ButtonGroup>
             </Flex>
         </Flex>
