@@ -20,7 +20,7 @@ const Login: NextPageWithLayout = () => {
     return (
         <Flex alignSelf="center" justify="center" flexDir="column" gap="10" maxW="lg">
             <Flex justify="center" flexDir="column">
-                <Heading size="2xl">Login</Heading>
+                <Heading size="2xl">Sign in to Portfolio</Heading>
                 <Text pt={5}>Glad to have you back!</Text>
             </Flex>
             <Box>

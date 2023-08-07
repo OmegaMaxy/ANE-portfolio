@@ -2,6 +2,7 @@ import { ReactElement, useState } from "react";
 import { NextPageWithLayout } from "./_app";
 import Layout from "../components/layouts/main";
 import { Flex, Box, FormControl, FormLabel, Heading, Input, Text, Button } from "@chakra-ui/react";
+import ChakraLink from "../components/core/Link";
 
 
 
@@ -22,24 +23,29 @@ const Register: NextPageWithLayout = () => {
         <Box>
             <Flex justify="center" flexDir="column">
 
-                <Heading size="2xl">Sign up</Heading>
-                <Text pt={5}>Glad to have on board!</Text>
+                <Heading size="2xl">First, create an account</Heading>
+                <Text pt={5}>
+                    We'll use this info to customize your website.
+                    <br/>
+                    Already have an account? <ChakraLink href="/login" color="main.900">Sign in</ChakraLink>.
+                </Text>
             </Flex>
             <Box pt="10">
                 <form>
-                    <FormControl>
-                        <FormLabel>Email address</FormLabel>
-                        <Input value={email} onChange={(ev) => setEmail(ev.target.value)} name="email" type="email" placeholder='john.doe@acme.com' required />
+                    <FormControl mt="5">
+                        <FormLabel>Your full name</FormLabel>
+                        <Input value={fullName} onChange={(ev) => setFullName(ev.target.value)} name="fullname" type="text" placeholder='John Doe' required />
                     </FormControl>
                     <FormControl mt="5">
-                        <FormLabel>Full name</FormLabel>
-                        <Input value={fullName} onChange={(ev) => setFullName(ev.target.value)} name="fullname" type="text" placeholder='John Doe' required />
+                        <FormLabel>Email</FormLabel>
+                        <Input value={email} onChange={(ev) => setEmail(ev.target.value)} name="email" type="email" placeholder='john.doe@acme.com' required />
                     </FormControl>
                     <FormControl mt="5">
                         <FormLabel>Password</FormLabel>
                         <Input value={password} onChange={(ev) => setPassword(ev.target.value)} name="password" type="password" placeholder="*********" required />
                     </FormControl>
-                    <Button colorScheme="teal" onClick={handleRegister} mt="10">Sign up</Button>
+                    <Button bg="main.900" _hover={{ bg: "main.800" }} onClick={handleRegister} mt="10">Next: Design your page →</Button>
+                    <Text mt="5">By signing up, you agree to the <ChakraLink href="/policies" textDecoration="underline">terms and privacy policy</ChakraLink>.</Text>
                 </form>
             </Box>
         </Box>
