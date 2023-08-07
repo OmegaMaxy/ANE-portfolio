@@ -7,10 +7,23 @@ const config = {
             700: '#2a69ac',
         },
         main: {
-            900: '#1e43fc',
-            800: '#4362fd',
+            600: '#0024d9',
+            500: '#1e43fc',
+            400: '#4362fd',
         }
     },
+    components: {
+        Button: {
+            variants: {
+                'main': {
+                    color: 'white',
+                    bg: "main.500",
+                    _hover: { bg: "main.600" },
+                    borderRadius: '4px'
+                }
+            }
+        }
+    }
     //initialColorMode: 
 }
 

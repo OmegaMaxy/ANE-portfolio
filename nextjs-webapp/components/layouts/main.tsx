@@ -5,7 +5,7 @@ export default function Layout({ children }) {
     return (
         <>
             <Navbar/>
-            <Box p="20">{children}</Box>
+            <Box>{children}</Box>
         </>
     )
 }
