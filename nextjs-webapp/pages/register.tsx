@@ -44,7 +44,7 @@ const Register: NextPageWithLayout = () => {
                         <FormLabel>Password</FormLabel>
                         <Input value={password} onChange={(ev) => setPassword(ev.target.value)} name="password" type="password" placeholder="*********" required />
                     </FormControl>
-                    <Button bg="main.900" _hover={{ bg: "main.800" }} onClick={handleRegister} mt="10">Next: Design your page →</Button>
+                    <Button variant="main" onClick={handleRegister} mt="10">Next: Design your page →</Button>
                     <Text mt="5">By signing up, you agree to the <ChakraLink href="/policies" textDecoration="underline">terms and privacy policy</ChakraLink>.</Text>
                 </form>
             </Box>
