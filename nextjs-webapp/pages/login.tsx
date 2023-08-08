@@ -18,26 +18,24 @@ const Login: NextPageWithLayout = () => {
     }
     
     return (
-        <Flex alignSelf="center" justify="center" flexDir="column" gap="10" maxW="lg">
-            <Flex justify="center" flexDir="column">
+        <Flex py="40" textAlign="center" alignItems="center" justify="center" flexDir="column" gap="10">
+            <Flex justify="center" flexDir="column" maxW="xl">
                 <Heading size="2xl">Sign in to Portfolio</Heading>
                 <Text pt={5}>Glad to have you back!</Text>
             </Flex>
-            <Box>
-                <form>
-                    <FormControl>
-                        <FormLabel>Email address</FormLabel>
-                        <Input value={email} onChange={(ev) => setEmail(ev.target.value)} name="email" type="email" placeholder='john.doe@acme.com' required/>
-                    </FormControl>
-                    <FormControl mt="5">
-                        <FormLabel>Password</FormLabel>
-                        <Input value={password} onChange={(ev) => setPassword(ev.target.value)} name="password" type="password" placeholder="*********" required />
-                    </FormControl>
-                    <Flex justifyContent="space-between" alignItems="center" mt="10">
-                        <Button colorScheme="teal" onClick={loginBtnClicked}>Login</Button>
-                        <Link href="/forgot-password" as={NextLink} color="teal">Forgot password</Link>
-                    </Flex>
-                </form>
+            <Box w="xl" maxW="xl">
+                <FormControl>
+                    <FormLabel>Email</FormLabel>
+                    <Input value={email} onChange={(ev) => setEmail(ev.target.value)} name="email" type="email" placeholder='john.doe@acme.com' required/>
+                </FormControl>
+                <FormControl mt="5">
+                    <FormLabel>Password</FormLabel>
+                    <Input value={password} onChange={(ev) => setPassword(ev.target.value)} name="password" type="password" placeholder="*********" required />
+                </FormControl>
+                <Flex justifyContent="flex-end" alignItems="center" mt="5">
+                    <Link href="/forgot-password" as={NextLink} color="main.500">Forgot your password?</Link>
+                </Flex>
+                <Button mt="10" w="100%" variant="main" onClick={loginBtnClicked}>Login →</Button>
             </Box>
         </Flex>
     )

@@ -20,8 +20,8 @@ const Register: NextPageWithLayout = () => {
     }
 
     return (
-        <Box>
-            <Flex justify="center" flexDir="column">
+        <Box py="40">
+            <Flex justify="center" flexDir="column" textAlign="center">
 
                 <Heading size="2xl">First, create an account</Heading>
                 <Text pt={5}>
@@ -30,7 +30,7 @@ const Register: NextPageWithLayout = () => {
                     Already have an account? <ChakraLink href="/login" color="main.900">Sign in</ChakraLink>.
                 </Text>
             </Flex>
-            <Box pt="10">
+            <Flex justify="center" pt="10" textAlign="center">
                 <form>
                     <FormControl mt="5">
                         <FormLabel>Your full name</FormLabel>
@@ -47,7 +47,7 @@ const Register: NextPageWithLayout = () => {
                     <Button variant="main" onClick={handleRegister} mt="10">Next: Design your page →</Button>
                     <Text mt="5">By signing up, you agree to the <ChakraLink href="/policies" textDecoration="underline">terms and privacy policy</ChakraLink>.</Text>
                 </form>
-            </Box>
+            </Flex>
         </Box>
     )
 }
