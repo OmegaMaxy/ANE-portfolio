@@ -1,3 +1,5 @@
+import { useColorModeValue } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react'
 
 const config = {
     colors: {
@@ -16,19 +18,28 @@ const config = {
         Button: {
             variants: {
                 'main': {
+                    //color: useColorModeValue('black', 'white'),
                     color: 'white',
                     bg: "main.500",
                     _hover: { bg: "main.600" },
                     borderRadius: '4px'
-                }
+                },
+                'main.outline': {
+                    //color: useColorModeValue('black', 'white'),
+                    color: 'white',
+                    bg: "transparent",
+                    _hover: { bg: "main.500", color: 'white' },
+                    border: '2px solid black',
+                    borderColor: "main.500",
+                    borderRadius: '4px'
+                },
             }
         }
-    }
-    //initialColorMode: 
+    },
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
 }
 
 
-
-
-
-export default config
+const theme = extendTheme(config)
+export default theme
