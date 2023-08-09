@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import { Button, ButtonGroup, Flex, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import ButtonLink from './core/ButtonLink'
+import SwitchDarkModeButton from './SwitchDarkModeButton'
 
 export default function Navbar() {
     return (
@@ -15,7 +16,8 @@ export default function Navbar() {
                     <Link href="/#pricing" as={NextLink} color={useColorModeValue('black', 'white')}>Pricing</Link>
                 </Flex>
             </Flex>
-            <Flex>
+            <Flex alignItems="center">
+                <SwitchDarkModeButton mr="15"/>
                 <ButtonGroup gap="4">
                     <ButtonLink href="/login" size="lg" bg="transparent">Login</ButtonLink>
                     <ButtonLink href="/register" size="lg" variant='main'>Sign up</ButtonLink>
