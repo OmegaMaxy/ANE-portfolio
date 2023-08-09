@@ -1,16 +1,17 @@
 import type { ReactElement } from 'react'
-import { Box, Button, Heading, Text, Image, Flex, Avatar, Badge } from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Image, Flex, Avatar, Badge, useColorModeValue } from "@chakra-ui/react";
 import { NextPageWithLayout } from "./_app";
 
 import Layout from '../components/layouts/main';
 import ButtonLink from '../components/core/ButtonLink';
 import ChakraLink from '../components/core/Link';
+import Navbar from '../components/Navbar';
 
 const Home: NextPageWithLayout = () => {
 
     return (
         <Box>
-
+            <Navbar />
             <Box m="20">
                 <Text size="lg" color="main.500" fontWeight="medium">PERSONAL WEBSITE + NEWSLETTER</Text>
                 <Heading size="3xl" fontWeight="bolder">Stay in touch, with or without social media</Heading>
@@ -147,43 +148,44 @@ const Home: NextPageWithLayout = () => {
                 </Flex>
             </Box>
             <Box m="20">
+                <Flex alignItems="center" justifyContent="center" bg="blue" w="300px" h="300px" color="white" verticalAlign="middle" textAlign="center" borderRadius="50%">
+                    <Text>A</Text>
+                </Flex>
                 <Text size="lg" color="main.500" fontWeight="medium">HOW IT WORKS</Text>
                 <Heading color="blackAlpha.800" mt="2">Write once, share everywhere</Heading>
                 <Box mt="8" maxW="lg">
+                    <Box mb="12">
+                        <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                            <Text>1</Text>
+                        </Flex>
+                        <Text fontWeight="bold" display="inline">Make a site in minutes</Text>
+                        <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your photo and biography, then publish to your own domain.</Text>
+                    </Box>
                     <Flex gap="4" mb="12">
                         <Box>
-                            <Text h="15px" w="15px" m="0" p="0" bg="main.500" borderRadius="50%">1</Text>
-                        </Box>
-                        <Box>
-                            <Text fontWeight="bold" display="inline">Make a site in minutes</Text>
-                            <Text color="gray.300" display="inline"> Add your photo and biography, then publish to your own domain.</Text>
-                        </Box>
-                    </Flex>
-                    <Flex gap="4" mb="12">
-                        <Box>
-                            <Text h="15px" w="15px" m="0" p="0" bg="main.500" borderRadius="50%">2</Text>
-                        </Box>
-                        <Box>
+                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                <Text>2</Text>
+                            </Flex>
                             <Text fontWeight="bold" display="inline">Feature it on your social profiles</Text>
-                            <Text color="gray.300" display="inline"> Add your homepage as the bio link on your social profiles. It both looks legit and helps people find your site.</Text>
+                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your homepage as the bio link on your social profiles. It both looks legit and helps people find your site.</Text>
                         </Box>
                     </Flex>
                     <Flex gap="4" mb="12">
                         <Box>
-                            <Text h="15px" w="15px" m="0" p="0" bg="main.500" borderRadius="50%">3</Text>
-                        </Box>
-                        <Box>
+                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                <Text>3</Text>
+                            </Flex>
                             <Text fontWeight="bold" display="inline">Write on Postcard, then share everywhere</Text>
-                            <Text color="gray.300" display="inline"> When you have something to share, post on Postcard. Email subscribers will get it in their inbox. Then, share an enhanced link on sites like Twitter and LinkedIn.</Text>
+                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> When you have something to share, post on Postcard. Email subscribers will get it in their inbox. Then, share an enhanced link on sites like Twitter and LinkedIn.</Text>
                         </Box>
                     </Flex>
                     <Flex gap="4" mb="12">
                         <Box>
-                            <Text h="15px" w="15px" m="0" p="0" bg="main.500" borderRadius="50%">4</Text>
-                        </Box>
-                        <Box>
+                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                <Text>4</Text>
+                            </Flex>
                             <Text fontWeight="bold" display="inline">Grow your mailing list</Text>
-                            <Text color="gray.300" display="inline"> As people subscribe to your newsletter, you build a list of contacts you own and can contact directly - no more depending on social networks.</Text>
+                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> As people subscribe to your newsletter, you build a list of contacts you own and can contact directly - no more depending on social networks.</Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -354,10 +356,10 @@ const Home: NextPageWithLayout = () => {
                     </Box>
                 </Box>
             </Flex>
-            <Box m="20" textAlign="center">
+            <Box m="20" textAlign="center" id="pricing">
                 <Text mb="3" size="lg" color="main.500" fontWeight="medium">PRICING</Text>
-                <Heading mb="5" size="3xl" color="blackAlpha.800">Free page + newsletter</Heading>
-                <Text mb="12" fontSize="lg" color="blackAlpha.800">Affordable premium plan for hosting on a custom domain.</Text>
+                <Heading mb="5" size="3xl" color={useColorModeValue("blackAlpha.800", "white")}>Free page + newsletter</Heading>
+                <Text mb="12" fontSize="lg" color={useColorModeValue("blackAlpha.800", "white")}>Affordable premium plan for hosting on a custom domain.</Text>
                 <Box mb="6" p="8" w="60%" ml="auto" mr="auto" bg="white" color="blackAlpha.800" textAlign="left" boxShadow="-2px -1px 15px 6px #0a0a0a" borderRadius="8px">
                     <Badge mb="3" variant="outline" color="main.500" px="2" border="1px solid black" borderColor="main.500" boxShadow="none" borderRadius="6px">Basic</Badge>
                     <Heading size="3xl">Free</Heading>
