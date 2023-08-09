@@ -5,9 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import '../public/main.css'
 
-import config from '../lib/theme'
-
-export const theme = extendTheme(config)
+import theme from '../lib/theme'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
