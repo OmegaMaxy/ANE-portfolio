@@ -101,7 +101,7 @@ const Home: NextPageWithLayout = () => {
                     </Box>
                 </Box>
             </Flex>
-            <Box m="20" my="90" boxShadow="-2px -1px 15px 11px #0a0a0a" border="8px solid gray" borderColor="gray.600" borderRadius="10px">
+            <Box m="20" my="90" border="8px solid gray" borderColor="gray.600" borderRadius="10px">
                 <Flex bg="white" color="blackAlpha.800" p="5" gap="5">
                     <Box>
                         <Avatar loading="lazy" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1lFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f83432694d724cc8c53cef7e98cf21e0bb94ebbe/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2hwQXJBQmFRS3dBWHNHT2dsamNtOXdPZzVoZEhSbGJuUnBiMjQ9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--8c0a40a953dbe9e33df59869fedfbecb186eb4e5/emma-lawler.jpg" name="Emma Lawler"></Avatar>
@@ -148,11 +148,8 @@ const Home: NextPageWithLayout = () => {
                 </Flex>
             </Box>
             <Box m="20">
-                <Flex alignItems="center" justifyContent="center" bg="blue" w="300px" h="300px" color="white" verticalAlign="middle" textAlign="center" borderRadius="50%">
-                    <Text>A</Text>
-                </Flex>
                 <Text size="lg" color="main.500" fontWeight="medium">HOW IT WORKS</Text>
-                <Heading color="blackAlpha.800" mt="2">Write once, share everywhere</Heading>
+                <Heading color={useColorModeValue("blackAlpha.800", "white")} mt="2">Write once, share everywhere</Heading>
                 <Box mt="8" maxW="lg">
                     <Box mb="12">
                         <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
@@ -191,7 +188,7 @@ const Home: NextPageWithLayout = () => {
                 </Box>
             </Box>
             <Flex my="90" gap="2rem 2rem" justify="center" flexWrap="wrap">
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -205,7 +202,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -219,7 +216,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -233,7 +230,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -250,7 +247,7 @@ const Home: NextPageWithLayout = () => {
             </Flex>
             <Box m="20">
                 <Text size="lg" color="main.500" fontWeight="medium">FEATURES</Text>
-                <Heading color="blackAlpha.800" mt="2" mb="20">All-in-one tool for your personal site</Heading>
+                <Heading color={useColorModeValue("blackAlpha.800", "white")} mt="2" mb="20">All-in-one tool for your personal site</Heading>
                 <Flex gap="6rem 3rem" justify="center" flexWrap="wrap">
                     <Flex gap="4" w="47%">
                         <Box bg="main.500" color="white" p="3" w="50px" h="50px" borderRadius="6px">
@@ -299,7 +296,7 @@ const Home: NextPageWithLayout = () => {
                 </Flex>
             </Box>
             <Flex my="90" gap="2rem 2rem" justify="center" flexWrap="wrap">
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -313,7 +310,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -327,7 +324,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -341,7 +338,7 @@ const Home: NextPageWithLayout = () => {
                         <ChakraLink href="https://emmalawler.com" fontSize="xs" color="gray.500">emmalawler.com</ChakraLink>
                     </Box>
                 </Box>
-                <Box bg="white" w="40%" borderRadius="4px">
+                <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
                     <Box bg="white" p="5" pt="5" pb="5" borderRadius="16px">
                         <Flex justify="space-between">
@@ -356,11 +353,11 @@ const Home: NextPageWithLayout = () => {
                     </Box>
                 </Box>
             </Flex>
-            <Box m="20" textAlign="center" id="pricing">
+            <Box my="20" py="20" textAlign="center" id="pricing" bg="#ececec">
                 <Text mb="3" size="lg" color="main.500" fontWeight="medium">PRICING</Text>
                 <Heading mb="5" size="3xl" color={useColorModeValue("blackAlpha.800", "white")}>Free page + newsletter</Heading>
                 <Text mb="12" fontSize="lg" color={useColorModeValue("blackAlpha.800", "white")}>Affordable premium plan for hosting on a custom domain.</Text>
-                <Box mb="6" p="8" w="60%" ml="auto" mr="auto" bg="white" color="blackAlpha.800" textAlign="left" boxShadow="-2px -1px 15px 6px #0a0a0a" borderRadius="8px">
+                <Box mb="6" p="8" w="60%" ml="auto" mr="auto" bg="white" color="blackAlpha.800" textAlign="left" boxShadow={useColorModeValue("-2px -1px 20px 0px #0a0a0a", "-2px -1px 15px 6px #0a0a0a")} borderRadius="8px">
                     <Badge mb="3" variant="outline" color="main.500" px="2" border="1px solid black" borderColor="main.500" boxShadow="none" borderRadius="6px">Basic</Badge>
                     <Heading size="3xl">Free</Heading>
                     <Text mt="4" mb="8">Personal homepage + newsletter</Text>
@@ -398,7 +395,7 @@ const Home: NextPageWithLayout = () => {
                     </Flex>
                     <ButtonLink href="/register" variant="main" w="100%" py="8">Make a free account</ButtonLink>
                 </Box>
-                <Box mb="3" p="8" w="60%" ml="auto" mr="auto" bg="white" color="blackAlpha.800" textAlign="left" boxShadow="-2px -1px 15px 6px #0a0a0a" borderRadius="8px">
+                <Box mb="3" p="8" w="60%" ml="auto" mr="auto" bg="white" color="blackAlpha.800" textAlign="left" boxShadow={useColorModeValue("-2px -1px 20px 0px #0a0a0a", "-2px -1px 15px 6px #0a0a0a")} borderRadius="8px">
                     <Badge mb="3" variant="solid" color="white" bg="main.500" py="2" px="2" borderRadius="6px">Premium</Badge>
                     <Box>
                         <Heading size="3xl" display="inline">$8</Heading>
