@@ -20,6 +20,7 @@ const Page: NextPageWithLayout = () => {
     async function updateAccount() {
         //const res = await login({email, password})
         console.log(email, fullName, profilePic, portfolioBanner)
+        // update session
     }
     async function updatePassword() {
         //const res = await login({email, password})
