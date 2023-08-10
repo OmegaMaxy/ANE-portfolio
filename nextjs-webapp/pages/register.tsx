@@ -27,7 +27,7 @@ const Register: NextPageWithLayout = () => {
                 <Text pt={5}>
                     We'll use this info to customize your website.
                     <br/>
-                    Already have an account? <ChakraLink href="/login" color="main.900">Sign in</ChakraLink>.
+                    Already have an account? <ChakraLink href="/login" color="main.500">Sign in</ChakraLink>.
                 </Text>
             </Flex>
             <Flex justify="center" pt="10" textAlign="center">
