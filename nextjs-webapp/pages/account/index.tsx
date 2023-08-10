@@ -13,16 +13,17 @@ const Page: NextPageWithLayout = () => {
     const [email, setEmail] = useState('')
     const [fullName, setFullName] = useState('')
     const [profilePic, setProfilePic] = useState('')
+    const [portfolioBanner, setPortfolioBanner] = useState('')
     const [oldPassword, setOldPassword] = useState('')
     const [newPassword, setNewPassword] = useState('')
 
     async function updateAccount() {
         //const res = await login({email, password})
-        console.log(email, fullName, profilePic, )
+        console.log(email, fullName, profilePic, portfolioBanner)
     }
     async function updatePassword() {
         //const res = await login({email, password})
-        console.log(email, fullName, profilePic, )
+        console.log(oldPassword, newPassword)
     }
 
     useEffect(() => {
@@ -58,7 +59,11 @@ const Page: NextPageWithLayout = () => {
                     </FormControl>
                     <FormControl mt="5">
                         <FormLabel>Profile pic</FormLabel>
-                        <Input value={profilePic} onChange={(ev) => setProfilePic(ev.target.value)} name="profilepic" type="text" placeholder="https://..." />
+                        <Input value={profilePic} onChange={(ev) => setProfilePic(ev.target.value)} name="profilePic" type="text" placeholder="https://..." />
+                    </FormControl>
+                    <FormControl mt="5">
+                        <FormLabel>portfolio banner</FormLabel>
+                        <Input value={portfolioBanner} onChange={(ev) => setProfilePic(ev.target.value)} name="portfolioBanner" type="text" placeholder="https://..." />
                     </FormControl>
                     <Button colorScheme="teal" onClick={updateAccount} mt="10">Save</Button>
                 </form>
