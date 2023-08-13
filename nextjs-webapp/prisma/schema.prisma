@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               Int              @id @default(autoincrement())
+  email            String           @unique
+  fullname         String
+  password         String
+  profile_picture  String?
+  bio_text         String?          @db.LongText()
+  portfolio_banner String?
+  posts            Post[]
+  portfolio_design PortfolioDesign?
+  created_at       DateTime         @default(now())
+  updated_at       DateTime         @updatedAt
+}
+
+model Post {
+  id           Int      @id @default(autoincrement())
+  title        String
+  content      String?
+  published    Boolean  @default(false)
+  author       User     @relation(fields: [authorId], references: [id])
+  authorId     Int
+  publish_date DateTime @default(now())
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+}
+
+model PortfolioDesign {
+  id                 Int      @id @default(autoincrement())
+  bg_color           String
+  secondary_color    String
+  show_subscribe_box Boolean
+  show_latest_post   Boolean
+  posts_bio_type     PostsPageBioType @default(Latest_Post)
+  author             User     @relation(fields: [authorId], references: [id])
+  authorId           Int      @unique
+  show_free_footer   Boolean
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
+}
+
+enum PostsPageBioType {
+  Latest_Post
+  Short_Text
+}
