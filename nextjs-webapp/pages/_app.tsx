@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import { extendTheme } from '@chakra-ui/react'
+import { SessionProvider } from "next-auth/react"
 import '../public/main.css'
 
 import theme from '../lib/theme'
@@ -16,13 +16,15 @@ type AppPropsWithLayout = AppProps & {
 }
 
 
-function App({ Component, pageProps }: AppPropsWithLayout) {
+function App({ Component, pageProps: { session, ...pageProps} }: AppPropsWithLayout) {
 
     const getLayout = Component.getLayout ?? ((page) => page)
     return getLayout(
-        <ChakraProvider theme={theme}>
-            <Component {...pageProps}/>
-        </ChakraProvider>
+        <SessionProvider session={session}>
+            <ChakraProvider theme={theme}>
+                <Component {...pageProps}/>
+            </ChakraProvider>
+        </SessionProvider>
     )
 }
 
