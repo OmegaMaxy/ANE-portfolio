@@ -2,8 +2,12 @@ import NextLink from 'next/link'
 import { Button, ButtonGroup, Flex, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import ButtonLink from './core/ButtonLink'
 import SwitchDarkModeButton from './SwitchDarkModeButton'
+import { useSession } from 'next-auth/react'
 
 export default function Navbar() {
+
+    const { status } = useSession()
+
     return (
         <Flex p="10" w="100%" align="center" justifyContent="space-between">
             <Flex>
@@ -18,10 +22,15 @@ export default function Navbar() {
             </Flex>
             <Flex alignItems="center">
                 <SwitchDarkModeButton mr="15"/>
-                <ButtonGroup gap="4">
-                    <ButtonLink href="/login" size="lg" bg="transparent">Login</ButtonLink>
-                    <ButtonLink href="/register" size="lg" variant='main'>Sign up</ButtonLink>
-                </ButtonGroup>
+                {
+                    status == 'authenticated' ?
+                        <ButtonLink href="/portfolio" variant="main">Portfolio →</ButtonLink>
+                    :
+                        <ButtonGroup gap="4">
+                            <ButtonLink href="/login" size="lg" bg="transparent">Login</ButtonLink>
+                            <ButtonLink href="/register" size="lg" variant='main'>Sign up</ButtonLink>
+                        </ButtonGroup>
+                }
             </Flex>
         </Flex>
     )
