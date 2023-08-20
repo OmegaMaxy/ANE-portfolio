@@ -8,7 +8,9 @@ export default function Sidebar({ ...props }) {
     
     return (
         <Box h="100%" p="10" bg="#e1e1e1" {...props}>
-            <Heading mb="10">Portfolio</Heading>
+            <ChakraLink href="/portfolio" _hover={{ textDecoration: "none" }}>
+                <Heading mb="10">Portfolio</Heading>
+            </ChakraLink>
             <VStack align="flex-start" h="90%">
                 <ChakraLink href="/account">Account</ChakraLink>
                 <ChakraLink href="/portfolio/analytics">Analytics</ChakraLink>
