@@ -147,46 +147,48 @@ const Home: NextPageWithLayout = () => {
                     </Box>
                 </Flex>
             </Box>
-            <Box m="20">
-                <Text size="lg" color="main.500" fontWeight="medium">HOW IT WORKS</Text>
-                <Heading color={useColorModeValue("blackAlpha.800", "white")} mt="2">Write once, share everywhere</Heading>
-                <Box mt="8" maxW="lg">
-                    <Box mb="12">
-                        <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
-                            <Text>1</Text>
+            <Flex m="20" justify="center">
+                <Box>
+                    <Text size="lg" color="main.500" fontWeight="medium">HOW IT WORKS</Text>
+                    <Heading color={useColorModeValue("blackAlpha.800", "white")} mt="2">Write once, share everywhere</Heading>
+                    <Box mt="8" maxW="lg">
+                        <Box mb="12">
+                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                <Text>1</Text>
+                            </Flex>
+                            <Text fontWeight="bold" display="inline">Make a site in minutes</Text>
+                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your photo and biography, then publish to your own domain.</Text>
+                        </Box>
+                        <Flex gap="4" mb="12">
+                            <Box>
+                                <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                    <Text>2</Text>
+                                </Flex>
+                                <Text fontWeight="bold" display="inline">Feature it on your social profiles</Text>
+                                <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your homepage as the bio link on your social profiles. It both looks legit and helps people find your site.</Text>
+                            </Box>
                         </Flex>
-                        <Text fontWeight="bold" display="inline">Make a site in minutes</Text>
-                        <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your photo and biography, then publish to your own domain.</Text>
+                        <Flex gap="4" mb="12">
+                            <Box>
+                                <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                    <Text>3</Text>
+                                </Flex>
+                                <Text fontWeight="bold" display="inline">Write on Postcard, then share everywhere</Text>
+                                <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> When you have something to share, post on Postcard. Email subscribers will get it in their inbox. Then, share an enhanced link on sites like Twitter and LinkedIn.</Text>
+                            </Box>
+                        </Flex>
+                        <Flex gap="4" mb="12">
+                            <Box>
+                                <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
+                                    <Text>4</Text>
+                                </Flex>
+                                <Text fontWeight="bold" display="inline">Grow your mailing list</Text>
+                                <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> As people subscribe to your newsletter, you build a list of contacts you own and can contact directly - no more depending on social networks.</Text>
+                            </Box>
+                        </Flex>
                     </Box>
-                    <Flex gap="4" mb="12">
-                        <Box>
-                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
-                                <Text>2</Text>
-                            </Flex>
-                            <Text fontWeight="bold" display="inline">Feature it on your social profiles</Text>
-                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> Add your homepage as the bio link on your social profiles. It both looks legit and helps people find your site.</Text>
-                        </Box>
-                    </Flex>
-                    <Flex gap="4" mb="12">
-                        <Box>
-                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
-                                <Text>3</Text>
-                            </Flex>
-                            <Text fontWeight="bold" display="inline">Write on Postcard, then share everywhere</Text>
-                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> When you have something to share, post on Postcard. Email subscribers will get it in their inbox. Then, share an enhanced link on sites like Twitter and LinkedIn.</Text>
-                        </Box>
-                    </Flex>
-                    <Flex gap="4" mb="12">
-                        <Box>
-                            <Flex display="inline-flex" mr="4" alignItems="center" justifyContent="center" h="5" w="5" bg="main.500" color="white" borderRadius="50%">
-                                <Text>4</Text>
-                            </Flex>
-                            <Text fontWeight="bold" display="inline">Grow your mailing list</Text>
-                            <Text color={useColorModeValue("blackAlpha.800", "gray.300")} display="inline"> As people subscribe to your newsletter, you build a list of contacts you own and can contact directly - no more depending on social networks.</Text>
-                        </Box>
-                    </Flex>
                 </Box>
-            </Box>
+            </Flex>
             <Flex my="90" gap="2rem 2rem" justify="center" flexWrap="wrap">
                 <Box bg="white" w="40%" borderRadius="4px" boxShadow="0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a">
                     <Image boxSize="max-content" objectFit="cover" height="4rem" w="100%" src="https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Nice banner" />
@@ -353,7 +355,7 @@ const Home: NextPageWithLayout = () => {
                     </Box>
                 </Box>
             </Flex>
-            <Box my="20" py="20" textAlign="center" id="pricing" bg="#ececec">
+            <Box mt="20" py="20" textAlign="center" id="pricing" bg={useColorModeValue("#ececec", "#1e1e1e")}>
                 <Text mb="3" size="lg" color="main.500" fontWeight="medium">PRICING</Text>
                 <Heading mb="5" size="3xl" color={useColorModeValue("blackAlpha.800", "white")}>Free page + newsletter</Heading>
                 <Text mb="12" fontSize="lg" color={useColorModeValue("blackAlpha.800", "white")}>Affordable premium plan for hosting on a custom domain.</Text>
