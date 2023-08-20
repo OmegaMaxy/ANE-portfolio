@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Flex, Link, LinkBox, LinkOverlay } from '@chakra-u
 
 export default function ButtonLink({ href, children, ...props }) {
     return (
-        <Link href={href} as={NextLink}>
+        <Link href={href} as={NextLink} _hover={{ textDecoration: "none" }}>
             <Button {...props}>{children}</Button>
         </Link>
     )
