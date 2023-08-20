@@ -43,7 +43,7 @@ const Page: NextPageWithLayout = () => {
                             <Box bg="white" w="container.sm" marginLeft="auto" marginRight="auto" pt="5" pb="10">
                                 <Flex justify="space-between">
                                     <Avatar position="relative" mt="-75" size="2xl" loading="lazy" showBorder={true} border="4px solid white" src={session.user.profile_picture} name="Emma Lawler" />
-                                    <ChakraLink href="/posts" alignSelf="center" color="main.500" fontWeight="medium">Recent posts →</ChakraLink>
+                                    <ChakraLink href="/portfolio/posts" alignSelf="center" color="main.500" fontWeight="medium">Recent posts →</ChakraLink>
                                 </Flex>
                                 <Heading color="blackAlpha.800" mt="5">{session.user.fullname}</Heading>
                                 <Text my="10" color="blackAlpha.800">
