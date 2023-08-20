@@ -15,39 +15,39 @@ model User {
   email            String           @unique
   fullname         String
   password         String
-  profile_picture  String?
+  profile_picture  String?          @db.Text
   bio_text         String?          @db.LongText()
-  portfolio_banner String?
+  portfolio_banner String?          @db.Text
   posts            Post[]
   portfolio_design PortfolioDesign?
   created_at       DateTime         @default(now())
-  updated_at       DateTime         @updatedAt
+  updated_at       DateTime         @updatedAt @default(now())
 }
 
 model Post {
   id           Int      @id @default(autoincrement())
   title        String
-  content      String?
+  content      String?  @db.LongText
   published    Boolean  @default(false)
   author       User     @relation(fields: [authorId], references: [id])
   authorId     Int
   publish_date DateTime @default(now())
   created_at   DateTime @default(now())
-  updated_at   DateTime @updatedAt
+  updated_at   DateTime @updatedAt @default(now())
 }
 
 model PortfolioDesign {
   id                 Int      @id @default(autoincrement())
-  bg_color           String
-  secondary_color    String
-  show_subscribe_box Boolean
-  show_latest_post   Boolean
+  bg_color           String?  @default("white")
+  secondary_color    String?  @default("main.500")
+  show_subscribe_box Boolean  @default(true)
+  show_latest_post   Boolean  @default(true)
   posts_bio_type     PostsPageBioType @default(Latest_Post)
   author             User     @relation(fields: [authorId], references: [id])
   authorId           Int      @unique
-  show_free_footer   Boolean
+  show_free_footer   Boolean  @default(true)
   created_at         DateTime @default(now())
-  updated_at         DateTime @updatedAt
+  updated_at         DateTime @updatedAt @default(now())
 }
 
 enum PostsPageBioType {
