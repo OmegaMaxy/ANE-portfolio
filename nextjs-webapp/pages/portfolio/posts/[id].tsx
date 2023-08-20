@@ -79,10 +79,10 @@ const Page: NextPageWithLayout = ({ id }: {id: number}) => {
                 </FormControl>
                 <FormControl mt="10">
                     <FormLabel>Content</FormLabel>
-                    <Textarea value={content} onChange={(ev) => setContent(ev.target.value)} color="blackAlpha.800" _placeholder={{ color: 'blackAlpha.500' }} border="2px solid #63b3ed" _hover={{ border: "2px solid #63b3ed" }} placeholder="I'm an entrepreneur with a background in product & design. You can connect with me on LinkedIn and Twitter 👋"></Textarea>
+                    <Textarea value={content} onChange={(ev) => setContent(ev.target.value)} color="blackAlpha.800" _placeholder={{ color: 'blackAlpha.500' }} minH="50vh" border="2px solid #63b3ed" _hover={{ border: "2px solid #63b3ed" }} placeholder="I'm an entrepreneur with a background in product & design. You can connect with me on LinkedIn and Twitter 👋"></Textarea>
                 </FormControl>
 
-                <Button mt="5" onClick={save} colorScheme="cyan">Save</Button>
+                <Button mt="5" onClick={save} variant="main">Save</Button>
             </Box>
         </Box>
     )
