@@ -9,12 +9,12 @@ export default function Sidebar({ ...props }) {
     return (
         <Box h="100%" p="10" bg="#e1e1e1" {...props}>
             <Heading mb="10">Portfolio</Heading>
-            <VStack align="flex-start">
+            <VStack align="flex-start" h="90%">
                 <ChakraLink href="/account">Account</ChakraLink>
                 <ChakraLink href="/portfolio/analytics">Analytics</ChakraLink>
                 <ChakraLink href="/portfolio/posts">Posts</ChakraLink>
-                <Button onClick={() => signOut()} colorScheme="red">Logout</Button>
             </VStack>
+            <Button onClick={() => signOut()} colorScheme="red" position="fixed" bottom="3vh">Logout</Button>
         </Box>
     )
 }
