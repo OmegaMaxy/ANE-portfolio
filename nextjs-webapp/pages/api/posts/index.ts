@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { check } from "../../../util/request-handling";
 //import { createDB } from "../../../lib/api/database"
 import { PrismaClient } from '@prisma/client'
-import { encryptPassword } from "../../../util/encryption";
 import { PublicUserSelect } from "../../../lib/api/user/selection";
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
@@ -11,32 +10,35 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
 
     try {
         const errList = []
-        check(req.body.email, 'email.invalid', errList)
-        check(req.body.fullname, 'fullname.invalid', errList)
-        check(req.body.password, 'password.invalid', errList)
+        check(req.body.title, 'title.invalid', errList)
+        check(req.body.user_id, 'user_id.invalid', errList)
 
         if (errList.length != 0) {
             res.status(400).send({ data: { errors: errList } })
             return
         }
 
-        const user = await prisma.user.create({
+        const post = await prisma.post.create({
             data: {
-                email: req.body.email,
-                fullname: req.body.fullname,
-                password: await encryptPassword(req.body.password)
+                title: req.body.title,
+                authorId: req.body.user_id,
+                published: req.body.published,
             },
-            select: PublicUserSelect
+            select: {
+                id: true,
+                title: true,
+                author: {
+                   select: {
+                        id: true,
+                        email: true,
+                        fullname: true,
+                        profile_picture: true,
+                   } 
+                }
+            }
         })
-
-        const portfolio_design = await prisma.portfolioDesign.create({
-            data: {
-                authorId: user.id
-            },
-        })
-
         await prisma.$disconnect()
-        res.status(200).send({ data: { user } })
+        res.status(200).send({ data: { post } })
     } catch (error) {
         await prisma.$disconnect()
         res.status(400).send({ data: { error } })
