@@ -19,10 +19,12 @@ type AppPropsWithLayout = AppProps & {
 function App({ Component, pageProps: { session, ...pageProps} }: AppPropsWithLayout) {
 
     const getLayout = Component.getLayout ?? ((page) => page)
-    return getLayout(
+    return (
         <SessionProvider session={session}>
             <ChakraProvider theme={theme}>
+                {getLayout(
                 <Component {...pageProps}/>
+                )}
             </ChakraProvider>
         </SessionProvider>
     )
