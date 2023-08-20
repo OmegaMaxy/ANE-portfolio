@@ -8,14 +8,13 @@ import Navbar from "../../../components/Navbar";
 import { get } from "../../../services/users";
 import { getSession, useSession } from "next-auth/react";
 import SettingsBar from "../../../components/SettingsBar";
-
+import moment from 'moment'
 
 
 const Page: NextPageWithLayout = () => {
 
     const [user, setUser] = useState({ fullname: '', bio_text: '', profile_picture: '', portfolio_banner: '', posts: [] })
-    const [bioText, setBioText] = useState('')
-    const [latestPost, setLatestPost] = useState({ id: 0, title: '', date: '', shortDesc: '' })
+    const [latestPost, setLatestPost] = useState({ id: 0, title: '', publish_date: '', content: '' })
 
     
 
@@ -27,23 +26,13 @@ const Page: NextPageWithLayout = () => {
 
         async function getAccount() {
             await main()
-            console.log("Getting account details")
             const data = await get({ id: session.user.id })
             setUser(data.user)
+
+            setLatestPost(data.user.posts[0])
         }
-        async function getLatestPost() {
-            console.log("Getting latest post")
-            setLatestPost(user.posts[0])
-            setLatestPost({
-                id: 1,
-                title: 'Velvet early access',
-                date: new Date('April 13, 2023').toLocaleString(),
-                shortDesc: 'Thanks for following my startup journey. We’re launching Velvet Early Access on Product Hunt today, and I would love your support! Support Velvet on Product Hunt'
-            })
-        } 
         
         getAccount()
-        getLatestPost()
     }, [])
 
     return (
@@ -56,22 +45,22 @@ const Page: NextPageWithLayout = () => {
                     <ChakraLink href="/portfolio/preview/posts" alignSelf="center" color="pink.500" fontWeight="medium">Recent posts →</ChakraLink>
                 </Flex>
                 <Heading color="blackAlpha.800" mt="5">{user.fullname}</Heading>
-                <Text fontSize="sm" my="2" color="blackAlpha.800">{user.bio_text}</Text>
+                <Text fontSize="md" my="2" color="blackAlpha.800">{user.bio_text}</Text>
             </Box>
             <LinkBox display={latestPost ? 'initial' : 'none'}>
                 <Flex bg="whitesmoke" flexDir="column" justify="center" align="center" py="10">
                     <Card w="container.sm" size="lg" bg="white">
                         <CardHeader>
                             <Tag size="md" bg="gray.100" color="blackAlpha.800">New</Tag>
-                            <LinkOverlay href={`/posts/${latestPost.id}`}>
-                                <Heading my="3" color="blackAlpha.800" size="md">{latestPost.title}</Heading>
+                            <LinkOverlay href={`/portfolio/preview/posts/${latestPost.id}`}>
+                                <Heading mt="4" mb="1" color="blackAlpha.800" size="md">{latestPost.title}</Heading>
                             </LinkOverlay>
-                            <Text fontSize="sm" color="gray.400">{latestPost.date}</Text>
+                            <Text fontSize="sm" color="gray.500">{moment(latestPost.publish_date).format('MMMM D, YYYY')}</Text>
                         </CardHeader>
                         <CardBody py="0">
-                            <Text color="blackAlpha.800" fontWeight="medium">{latestPost.shortDesc} →</Text>
+                            <Text color="blackAlpha.800" fontWeight="medium">{latestPost.content != null ? latestPost.content.substring(0, 250) : ''} →</Text>
                         </CardBody>
-                        <CardFooter><ChakraLink href={`/posts/${latestPost.id}`} color="pink.500" fontWeight="medium">Read more →</ChakraLink></CardFooter>
+                        <CardFooter><ChakraLink href={`/portfolio/preview/posts/${latestPost.id}`} color="pink.500" fontWeight="medium">Read more →</ChakraLink></CardFooter>
                     </Card>
                     <Box w="container.sm" mt="12">
                         <Text color="blackAlpha.800" fontWeight="medium" mb="3">Subscribe to my updates</Text>

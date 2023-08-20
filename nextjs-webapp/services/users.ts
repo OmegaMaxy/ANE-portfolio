@@ -44,12 +44,19 @@ export async function saveUserBio({ id, bio_text }: { id: number, bio_text: stri
         headers: {
             'Content-Type': 'application/json'
         },
-        method: 'POST',
+        method: 'PATCH',
         body: JSON.stringify({
             bio_text,
         })
     })
     const data = await res.json()
 
+    return data.data
+}
+
+export async function getPosts({ id }: { id: number }) {
+    const res = await fetch(`http://localhost:3000/api/users/${id}/posts`)
+    const data = await res.json()
+    
     return data.data
 }
