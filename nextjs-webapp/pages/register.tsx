@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { NextPageWithLayout } from "./_app";
 import Layout from "../components/layouts/main";
 import { Flex, Box, FormControl, FormLabel, FormErrorMessage, Heading, Input, Text, Button } from "@chakra-ui/react";
@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 const Register: NextPageWithLayout = () => {
 
     const router = useRouter()
+    const session = useSession()
 
     const [email, setEmail] = useState('')
     const [fullname, setFullName] = useState('')
@@ -20,20 +21,27 @@ const Register: NextPageWithLayout = () => {
     const [hasFullnameError, setFullnameError] = useState(false)
     const [hasEmailError, setEmailError] = useState(false)
     const [hasPasswordError, setPasswordError] = useState(false)
+    
+    useEffect(() => {
+        if (session.status == 'authenticated') {
+            router.push('/portfolio')
+        }
+    }, [session])
 
     async function handleRegister() {
 
         const res = await register({ email, fullname, password })
-        if (res.data.errors) {
-            const errs = res.data.errors
+
+        if (res.errors) {
+            const errs = res.errors
             setEmailError(errs.includes("email.invalid"))
             setFullnameError(errs.includes("fullname.invalid"))
             setPasswordError(errs.includes("password.invalid"))
         } else {
             // create session
-            signIn("credentials", { email, password })
+            signIn("credentials", { email, password, redirect: true, callbackUrl: '/portfolio' } )
             // redirect to /portfolio-editor
-            router.push('/portfolio')
+            //router.push('/portfolio')
         }
     }
 

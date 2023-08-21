@@ -19,10 +19,12 @@ const Login: NextPageWithLayout = (props: any) => {
     const [hasPasswordError, setPasswordError] = useState(false)
 
     const { data: session, status, update } = useSession()
-    if (status == 'authenticated') {
-        // redirect to profile
-        router.push('/portfolio')
-    }
+    useEffect(() => {
+        if (status == 'authenticated') {
+            router.push('/portfolio')
+        }
+    }, [session])
+    
     async function loginBtnClicked() {
         /*const res = await login({email, password})
         if (res.data.errors) {
@@ -30,8 +32,10 @@ const Login: NextPageWithLayout = (props: any) => {
             setEmailError(errs.includes("email.invalid"))
             setPasswordError(errs.includes("password.invalid"))
         }*/
-        signIn("credentials", { email, password })
-        router.push('/portfolio')
+        const res = await signIn("credentials", { email, password, redirect: true, callbackUrl: '/portfolio' })
+        /*if (res.ok) {
+            router.push('/portfolio')
+        }*/
     }
 
 
@@ -42,7 +46,7 @@ const Login: NextPageWithLayout = (props: any) => {
                 <Heading size="2xl">Sign in to Portfolio</Heading>
                 <Text pt={5}>Glad to have you back!</Text>
             </Flex>
-            <Alert maxW="xl" status='error' display={error ? 'block' : 'none'}>
+            <Alert maxW="xl" status='error' display={error ? 'flex' : 'none'}>
                 <AlertIcon />
                 <AlertTitle>Something went wrong!</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
