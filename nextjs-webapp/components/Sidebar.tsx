@@ -16,7 +16,7 @@ export default function Sidebar({ ...props }) {
                 <ChakraLink href="/portfolio/analytics">Analytics</ChakraLink>
                 <ChakraLink href="/portfolio/posts">Posts</ChakraLink>
             </VStack>
-            <Button onClick={() => signOut()} colorScheme="red" position="fixed" bottom="3vh">Logout</Button>
+            <Button onClick={async () => await signOut({ redirect: true, callbackUrl: "/" })} colorScheme="red" position="fixed" bottom="3vh">Logout</Button>
         </Box>
     )
 }
