@@ -6,12 +6,13 @@ import { SessionProvider } from "next-auth/react"
 import '../public/main.css'
 
 import theme from '../lib/theme'
+import { Session } from 'next-auth'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
 }
 
-type AppPropsWithLayout = AppProps & {
+type AppPropsWithLayout = AppProps<{ session: Session }> & {
     Component: NextPageWithLayout
 }
 
