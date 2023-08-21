@@ -7,7 +7,7 @@ import { signOut, useSession, } from 'next-auth/react'
 export default function Sidebar({ ...props }) {
     
     return (
-        <Box h="100%" p="10" bg="#e1e1e1" {...props}>
+        <Box h="100%" p="10" {...props}>
             <ChakraLink href="/portfolio" _hover={{ textDecoration: "none" }}>
                 <Heading mb="10">Portfolio</Heading>
             </ChakraLink>
