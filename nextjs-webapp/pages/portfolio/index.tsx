@@ -6,27 +6,34 @@ import NextLink from 'next/link'
 import ChakraLink from "../../components/core/Link";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
-import { signOut, useSession, } from 'next-auth/react'
+import { getSession, signOut, useSession, } from 'next-auth/react'
 import { useRouter } from "next/router";
 import ButtonLink from "../../components/core/ButtonLink";
+import { getServerSession } from "next-auth/next";
+import type { Session } from "next-auth";
+import type { GetServerSidePropsContext } from "next"
+import { authOptions } from "../api/auth/[...nextauth]"
+import getServerSideSessionPropsLogic from "../../lib/getServerSideSessionPropsLogic";
+
+const Page: NextPageWithLayout = (props) => {
 
 
-const Page: NextPageWithLayout = () => {
-
-    const { data: session, status, update } = useSession()
-    const router = useRouter()
+    //const router = useRouter()
     const [lastTenPosts, setLastTenPosts] = useState([])
-
-    if (status === 'unauthenticated') {
-        router.push('/login')
-    }
-
+    //const session = {user: {}}
+    const [session, setSession] = useState(null)
+    
     async function getUserLastTenPosts() {
         console.log('Not implemented yet.')
     }
-    /*useEffect(() => {
-        //update()
-    }, [])*/
+
+    useEffect(() => {
+        //console.log(props)
+        async function bb() {
+            setSession(await getSession())
+        }
+        bb()
+    }, []) 
 
     return (
         <Box>
@@ -39,13 +46,13 @@ const Page: NextPageWithLayout = () => {
                     </Box>
                     <Box transform="scale(1.0)" w="container.lg" border="8px solid gray" borderColor="gray.600" borderRadius="10px">
                         <Box bg="white">
-                            <Image boxSize="max-content" objectFit="cover" height="9rem" w="100%" src={session.user.portfolio_banner} alt="Nice banner" />
+                            <Image boxSize="max-content" objectFit="cover" height="9rem" w="100%" src={session?.user.portfolio_banner} alt="Nice banner" />
                             <Box bg="white" w="container.sm" marginLeft="auto" marginRight="auto" pt="5" pb="10">
                                 <Flex justify="space-between">
-                                    <Avatar position="relative" mt="-75" size="2xl" loading="lazy" showBorder={true} border="4px solid white" src={session.user.profile_picture} name="Emma Lawler" />
+                                    <Avatar position="relative" mt="-75" size="2xl" loading="lazy" showBorder={true} border="4px solid white" src={session?.user.profile_picture} name={session?.user.fullname} />
                                     <ChakraLink href="/portfolio/posts" alignSelf="center" color="main.500" fontWeight="medium">Recent posts →</ChakraLink>
                                 </Flex>
-                                <Heading color="blackAlpha.800" mt="5">{session.user.fullname}</Heading>
+                                <Heading color="blackAlpha.800" mt="5">{session?.user.fullname}</Heading>
                                 <Text my="10" color="blackAlpha.800">
                                     I'm an entrepreneur with a background in product & design. You can connect with me on LinkedIn and Twitter 👋
                                 </Text>
@@ -87,3 +94,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
 
 export default Page
+/*
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    return await getServerSideSessionPropsLogic(context, { test: 'a', session: 'b', third: 'c'})
+}*/
