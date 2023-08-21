@@ -24,14 +24,16 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
             data: {
                 email: req.body.email,
                 fullname: req.body.fullname,
-                password: await encryptPassword(req.body.password)
+                password: await encryptPassword(req.body.password),
+                portfolio_banner: 'https://a.postcard.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdlVFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6bb9d4149e948647e8d03c163546db23769135d6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2REdOdmJuWmxjblE2Q1hkbFluQTZGSEpsYzJsNlpWOTBiMTlzYVcxcGRGc0hhUUpBQmpBPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--adc320d595c48ad23efe85758b9cc431242c3c5d/chris-abney-qLW70Aoo8BE-unsplash.jpg',
+                bio_text: "Hi! I'm new here, show me some love and support!"
             },
             select: PublicUserSelect
         })
 
         const portfolio_design = await prisma.portfolioDesign.create({
             data: {
-                authorId: user.id
+                authorId: user.id,
             },
         })
 
