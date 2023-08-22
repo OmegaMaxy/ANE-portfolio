@@ -9,7 +9,7 @@ export default function Layout({ children }) {
     return (
         <HStack bg={useColorModeValue("#e1e1e1", "chakra-body-bg")} h="100vh">
             <Sidebar w="15%" />
-            <Box w="85%" h="100%" p="10" bg={useColorModeValue("white", "chakra-body-bg")}>
+            <Box ml="15%" w="85%" h="100%" p="10" bg={useColorModeValue("white", "chakra-body-bg")}>
                 {children}
             </Box>
         </HStack>
