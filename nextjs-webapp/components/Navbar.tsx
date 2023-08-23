@@ -16,8 +16,9 @@ export default function Navbar() {
                         <Heading alignSelf="center" fontSize="2xl" color={useColorModeValue('black', 'white')}>Portfolio</Heading>
                     </Link>
                 </Flex>
-                <Flex alignItems="flex-end">
+                <Flex alignItems="flex-end" gap="4">
                     <Link href="/#pricing" as={NextLink} color={useColorModeValue('black', 'white')}>Pricing</Link>
+                    <Link href="/explore" as={NextLink} color={useColorModeValue('black', 'white')}>Explore</Link>
                 </Flex>
             </Flex>
             <Flex alignItems="center">
