@@ -25,7 +25,7 @@ export default function Sidebar({ ...props }) {
 
     return (
         <Box h="100%" p="10" {...props} position="fixed" top="0" left="0" borderRight="1px solid #303030">
-            <ChakraLink href="/portfolio" _hover={{ textDecoration: "none" }}>
+            <ChakraLink href="/" _hover={{ textDecoration: "none" }}>
                 <Heading mb="10">Portfolio</Heading>
             </ChakraLink>
             <VStack align="flex-start" h="88%" width="100%">
