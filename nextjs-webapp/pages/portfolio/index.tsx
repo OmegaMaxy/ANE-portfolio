@@ -78,6 +78,7 @@ const Page: NextPageWithLayout = (props) => {
                 <Divider my="10" />
                 <Heading>Your account</Heading>
                 <ButtonLink href="/account" variant="main" mt="5">Account settings →</ButtonLink>
+                <Divider my="10" />
             </Box>
             
         </Box>
