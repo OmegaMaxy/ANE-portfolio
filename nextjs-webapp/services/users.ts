@@ -54,8 +54,22 @@ export async function saveUserBio({ id, bio_text }: { id: number, bio_text: stri
     return data.data
 }
 
-export async function getPosts({ id }: { id: number }) {
-    const res = await fetch(`http://localhost:3000/api/users/${id}/posts`)
+export async function getPosts({ user_id, filter }: { user_id: number, filter?: { type: 'all' | 'published' | 'draft', order: 'newest' | 'oldest' | 'recent' } }) {
+    if (!filter) {
+        filter = { type: 'all', order: 'newest'}
+    }
+    if (user_id == null) {
+        return []
+    }
+    const filterUrl = `user_id=${user_id}&type=${filter.type}&order=${filter.order}`
+    const res = await fetch(`http://localhost:3000/api/posts?${filterUrl}`)
+    const data = await res.json()
+    
+    return data.data
+}
+
+export async function getRecentUsers() {
+    const res = await fetch(`http://localhost:3000/api/users/recent`)
     const data = await res.json()
     
     return data.data
