@@ -1,3 +1,4 @@
+import { PostsPageBioType } from "@prisma/client"
 
 export async function login({email, password}: { email: string, password: string }) {
     const res = await fetch('http://localhost:3000/api/users/login', {
@@ -47,6 +48,40 @@ export async function saveUserBio({ id, bio_text }: { id: number, bio_text: stri
         method: 'PATCH',
         body: JSON.stringify({
             bio_text,
+        })
+    })
+    const data = await res.json()
+
+    return data.data
+}
+export async function saveUserPortfolioDesign({ 
+    user_id, 
+    bg_color,
+    secondary_color,
+    posts_bio_type,
+    show_free_footer,
+    show_latest_post,
+    show_subscribe_box }: { 
+        user_id: number, 
+        bg_color: string,
+        secondary_color: string,
+        posts_bio_type: PostsPageBioType,
+        show_free_footer: boolean,
+        show_latest_post: boolean,
+        show_subscribe_box: boolean
+    }) {
+    const res = await fetch(`http://localhost:3000/api/users/${user_id}/update-design`, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'PATCH',
+        body: JSON.stringify({
+            bg_color,
+            secondary_color,
+            posts_bio_type,
+            show_free_footer,
+            show_latest_post,
+            show_subscribe_box
         })
     })
     const data = await res.json()
